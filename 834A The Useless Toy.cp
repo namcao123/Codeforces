@@ -1,29 +1,28 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 
 using namespace std;
-char a[] = {'v','<','^','>'};
 
-char c,t;
-int n, p, q;
+pair<int, int> p;
+
 
 int main()
 {
-    cin >> c >> t >> n;
-    n %= 4;
-    if (n == 2 || n == 0)
-        return cout << "undefined", 0;
-    for (int i = 0; i < 4; i++)
+    int n; cin >> n;
+    int a[n + 5];
+    int i;
+    for (i = 0; i < n; i++)
     {
-        if(s[i] == c)
-            p = i;
-        else if (s[i] == t)
-            q = i;
-        if ((p+n)%4 = q)
-            cout << "cw" << endl;
-        else cout << "ccw" << endl;
-    
+        cin >> a[i];
+        p.first = a[i];
+        p.second = i;
     }
+    
+    sort (p, p +n);
+    
+    for (i = 0; i < n; i ++)
+        cout << p.second << " ";
 
     return 0;
 }
